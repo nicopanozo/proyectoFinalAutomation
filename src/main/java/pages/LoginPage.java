@@ -8,15 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     WebDriver driver;
-
-    //Page object vas a tener un objeto por cada pagina en esta es todo del Login
-    @FindBy(id="user-name")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")
     WebElement usernameTextBox;
 
-    @FindBy(id="password")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input")
     WebElement passwordTextBox;
 
-    @FindBy(id="login-button")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")
     WebElement loginButton;
 
     public LoginPage(WebDriver driver){
