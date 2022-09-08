@@ -5,6 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
     WebDriver driver;
@@ -33,13 +38,28 @@ public class LoginPage {
         loginButton.click();
     }
 
-    @FindBy(className = "bot_column")
-    WebElement loginIcon;
 
-    public boolean verifyLoginIcon(){
-        boolean verifyLoginIcon = loginIcon.isDisplayed();
-        return verifyLoginIcon;
+    public boolean verifyLoginButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        boolean verifyLoginButton = loginButton.isDisplayed();
+        return verifyLoginButton;
     }
 
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[1]/a/div[2]/img")
+    WebElement orangeBanner;
+
+    public boolean verifyLoginSuccessful(){
+        boolean v = orangeBanner.isDisplayed();
+        return v;
+    }
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[1]/img")
+    WebElement imgLogin;
+
+    public boolean verifyLogOutSuccessful(){
+        boolean v = imgLogin.isDisplayed();
+        return v;
+    }
 
 }

@@ -4,9 +4,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Login.feature",
+        features = "src/test/resources/Home.feature",
         glue = {"stepDefinitions"},
-        tags = "@VerifyLowToHighPriceFilter"
+        tags = "@LogoutSuccess"
 
 )
 public class TestRunner {
