@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import pages.AdminPage;
 import pages.HomePage;
@@ -14,7 +15,23 @@ public class AdminSteps {
 
     @And("I click the admin option in the menu")
     public void clickOnAdminBtn(){
-
+        adminPage.clickOnAdminMenuBtn();
     }
+
+    @And("I click the qualification button on the topbar")
+    public void clickOnQualification(){
+        adminPage.clickOnQualificationBtn();
+    }
+
+    @And("I click the skills button")
+    public void clickSkillsBtn(){
+        adminPage.clickOnSkillBtn();
+    }
+
+    @And("I click the add skill button")
+    public void clickOnAddSkillBtn(){
+        adminPage.clickOnAddSkillBtn();
+    }
+
 
 }

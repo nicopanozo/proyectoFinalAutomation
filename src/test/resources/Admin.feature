@@ -8,3 +8,7 @@ Feature: Home feature Orange Page
     And I set the password with "admin123"
     And I click the log in button
     And I click the admin option in the menu
+    And I click the qualification button on the topbar
+    And I click the skills button
+    And I click the add skill button
+

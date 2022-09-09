@@ -19,4 +19,25 @@ public class AdminPage {
     public void clickOnAdminMenuBtn(){
         adminMenuBtn.click();
     }
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[4]")
+    WebElement qualificationsBtn;
+
+    public void clickOnQualificationBtn(){
+        qualificationsBtn.click();
+    }
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[4]/ul/li[1]")
+    WebElement skillBtn;
+    public void clickOnSkillBtn(){
+        skillBtn.click();
+    }
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div[1]/div/button")
+    WebElement addSkillBtn;
+
+    public void clickOnAddSkillBtn(){
+        addSkillBtn.click();
+    }
+
 }
