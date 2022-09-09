@@ -40,7 +40,7 @@ public class LoginPage {
 
 
     public boolean verifyLoginButton(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         boolean verifyLoginButton = loginButton.isDisplayed();
         return verifyLoginButton;

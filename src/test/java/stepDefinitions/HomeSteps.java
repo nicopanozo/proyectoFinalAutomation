@@ -26,6 +26,25 @@ public class HomeSteps {
         Assert.assertTrue(loginPage.verifyLogOutSuccessful());
     }
 
+    // Delete Records
+
+    @And("I click the delete record button")
+    public void clickOnDelete(){
+        homePage.clickOnDeleteButton();
+    }
+
+    /*
+    @Then("The id isnt there anymore")
+    public void idIsntThereAnymore(){
+        String a = homePage.getTextIdRecord();
+        Assert.assertTrue(a == "0046");
+    }
+
+     */
+    @Then("The id {string} is displayed")
+    public void verifyIdEmployees(String id){
+        Assert.assertTrue(homePage.verifyIds(id));
+    }
 
 
 }

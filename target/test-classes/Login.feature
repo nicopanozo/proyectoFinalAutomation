@@ -1,5 +1,5 @@
 Feature: Login Sauce Demo
-  Background: User login into Sauce Demo page
+  Background: User login into Orange page
     Given Im in orange web page
 
   @LoginSuccess

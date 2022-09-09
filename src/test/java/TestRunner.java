@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/Home.feature",
         glue = {"stepDefinitions"},
-        tags = "@LogoutSuccess"
-
+        tags = "@VerifyByIds"
 )
 public class TestRunner {
 
