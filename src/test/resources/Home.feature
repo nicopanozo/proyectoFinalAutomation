@@ -10,14 +10,14 @@ Feature: Home feature Orange Page
     And I click the profile button
     And I click the logout button
     Then The login Img is displayed
-#
-  @DeleteRecord
-  Scenario:Delete record from Home Page
-    Given I set the username with "Admin"
-    And I set the password with "admin123"
-    And I click the log in button
-    And I click the delete record button
-#    Then The id isnt there anymore
+
+  #@DeleteRecord
+  #Scenario:Delete record from Home Page
+   # Given I set the username with "Admin"
+    #And I set the password with "admin123"
+    #And I click the log in button
+    #And I click the delete record button
+    #Then The id "<id>" isn't displayed
 
 
   @VerifyByIds @NeedLogout

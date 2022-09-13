@@ -22,7 +22,7 @@ public class HomePage {
 
     public void clickOnProfile(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
+        wait.until(ExpectedConditions.elementToBeClickable(profileButton));
         profileButton.click();
     }
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a")
@@ -30,7 +30,7 @@ public class HomePage {
 
     public void clickOnLogoutButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
+        wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
         logoutButton.click();
     }
 

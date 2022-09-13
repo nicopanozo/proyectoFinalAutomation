@@ -6,6 +6,7 @@ import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.en_scouse.An;
 import org.junit.Assert;
 import pages.AdminPage;
 import pages.HomePage;
@@ -41,11 +42,9 @@ public class AdminSteps {
 
     @And("I fill the skill information fields with")
         public void fillSkillInformation(DataTable result) throws InterruptedException {
-        Thread.sleep(2000);
         List<String> data = result.transpose().asList(String.class);
         adminPage.setSkillName(data.get(0));
         adminPage.setSkillDescription(data.get(1));
-        Thread.sleep(2000);
     }
 
 
@@ -60,6 +59,57 @@ public class AdminSteps {
         Assert.assertTrue(adminPage.verifySuccesfullySaved());
 
     }
+    @And("I click the remove skill button")
+    public void clickOnRemoveSkillButton(){
+        adminPage.clickOnDeleteSkillBtn();
+    }
+
+    @And("I click on yes delete")
+    public void clickOnYesDelete(){
+        adminPage.clickOnConfirmDeleteSkillBtn();
+    }
+
+    @Then("The element was removed")
+    public void verifyDeleteSkillSuccess(){
+        Assert.assertTrue(adminPage.verifySuccessSkillDeleted());
+    }
+
+    @And("I click the job button on the topbar")
+    public void clickOnJobTopBar(){
+        adminPage.clickOnJobTopBar();
+    }
+
+    @And("I click the job titles option")
+    public void clickOnJobTitlesOption(){
+        adminPage.clickOnJobTitlesOption();
+    }
+
+    @And("I click the add job title button")
+    public void clickOnAddJobTitle(){
+        adminPage.clickOnAddJobBtn();
+    }
+
+    @And("I fill the job information fields with")
+    public void fillJobInformation(DataTable result) {
+        List<String> data = result.transpose().asList(String.class);
+        adminPage.setJobTitleName(data.get(0));
+        adminPage.setJobTitleDescription(data.get(1));
+        adminPage.setJobTitleNote(data.get(2));
+    }
+    @And("I click in save job button")
+    public void clickOnSaveJobBtn(){
+        adminPage.clickOnSaveJobBtn();
+    }
+
+    @Then("A succesfully saved job message is showed")
+    public void verifySuccessJobSaved(){
+        Assert.assertTrue(adminPage.verifySuccesfullJobSaved());
+    }
+    @And("I click the remove job button")
+    public void clickOnRemoveJob(){
+        adminPage.clickOnDeleteSkillBtn();
+    }
+
 
 
 
