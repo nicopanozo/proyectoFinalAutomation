@@ -21,12 +21,16 @@ public class HomePage {
     WebElement profileButton;
 
     public void clickOnProfile(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
         profileButton.click();
     }
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a")
     WebElement logoutButton;
 
     public void clickOnLogoutButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
         logoutButton.click();
     }
 
@@ -59,6 +63,8 @@ public class HomePage {
     WebElement configurationTopBarBtn;
 
     public void clickOnConfigTopBtn() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
         configurationTopBarBtn.click();
     }
 
@@ -66,6 +72,8 @@ public class HomePage {
     WebElement terminationReasonsBtn;
 
     public void clickOnTerminationRBtn(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
         terminationReasonsBtn.click();
     }
 

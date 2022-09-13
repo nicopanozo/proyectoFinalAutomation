@@ -4,9 +4,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Home.feature",
+        features = "src/test/resources/Admin.feature",
         glue = {"stepDefinitions"},
-        tags = "@VerifyTerminationReasonsDisplayed"
+        tags = "@CreateSkillRecord"
+        //plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class TestRunner {
 
