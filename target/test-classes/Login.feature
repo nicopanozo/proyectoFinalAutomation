@@ -1,4 +1,4 @@
-Feature: Login Sauce Demo
+Feature: Login Orange Page
   Background: User login into Orange page
     Given Im in orange web page
 

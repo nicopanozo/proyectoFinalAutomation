@@ -8,7 +8,7 @@ import io.cucumber.java.After;
 
 public class Hooks {
 
-    @After("@logoutdone")
+    @After("@NeedLogout")
     public void afterScenario() {
         HomePage homePage = new HomePage(DriverManager.getDriver().driver);
         homePage.clickOnProfile();

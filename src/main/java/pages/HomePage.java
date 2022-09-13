@@ -55,4 +55,30 @@ public class HomePage {
         return employeeId.isDisplayed();
     }
 
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]")
+    WebElement configurationTopBarBtn;
+
+    public void clickOnConfigTopBtn() {
+        configurationTopBarBtn.click();
+    }
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li[5]/a")
+    WebElement terminationReasonsBtn;
+
+    public void clickOnTerminationRBtn(){
+        terminationReasonsBtn.click();
+    }
+
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div[2]/div/span")
+    WebElement titleRecordTermination;
+
+    public boolean verifyTerminationNames(String terminationName){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(titleRecordTermination));
+        WebElement terminationN = driver.findElement(By.xpath("//div[contains(text(),'"+terminationName+"')]"));
+        return terminationN.isDisplayed();
+    }
+
+
 }

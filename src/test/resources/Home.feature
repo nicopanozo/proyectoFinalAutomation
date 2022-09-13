@@ -20,7 +20,7 @@ Feature: Home feature Orange Page
 #    Then The id isnt there anymore
 
 
-  @VerifyByIds @logoutdone
+  @VerifyByIds @NeedLogout
   Scenario Outline:Verify names by Id
     Given I set the username with "Admin"
     And I set the password with "admin123"
@@ -32,3 +32,17 @@ Feature: Home feature Orange Page
     |Finance|
     |Sales|
 
+
+  @VerifyTerminationReasonsDisplayed @NeedLogout
+  Scenario Outline: Verify termination reasons
+    Given I set the username with "Admin"
+    And I set the password with "admin123"
+    When I click the log in button
+    And I click the configuration topbar
+    And I click the termination reasons button
+    Then Termination reasons names "<termName>" will be displayed
+  Examples:
+    |termName|
+    |Deceased|
+    |Dismissed|
+    |Laid-off|

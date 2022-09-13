@@ -2,7 +2,10 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en_scouse.An;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.DriverManager;
@@ -44,6 +47,21 @@ public class HomeSteps {
     @Then("The id {string} is displayed")
     public void verifyIdEmployees(String id){
         Assert.assertTrue(homePage.verifyIds(id));
+    }
+
+    @And("I click the configuration topbar")
+    public void clickConfigTopBtn(){
+        homePage.clickOnConfigTopBtn();
+    }
+
+    @And("I click the termination reasons button")
+    public void clickOnterminationReasonsBtn(){
+        homePage.clickOnTerminationRBtn();
+    }
+
+    @Then("Termination reasons names {string} will be displayed")
+    public void terminarionPageDisplayed(String termName){
+        Assert.assertTrue(homePage.verifyTerminationNames(termName));
     }
 
 

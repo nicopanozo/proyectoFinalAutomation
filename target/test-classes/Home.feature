@@ -1,5 +1,5 @@
-Feature: Login Sauce Demo
-  Background: User login into Sauce Demo page
+Feature: Home feature Orange Page
+  Background: User actions on home page Orange
     Given Im in orange web page
 
   @LogoutSuccess
@@ -20,7 +20,7 @@ Feature: Login Sauce Demo
 #    Then The id isnt there anymore
 
 
-  @VerifyByIds @logoutdone
+  @VerifyByIds @NeedLogout
   Scenario Outline:Verify names by Id
     Given I set the username with "Admin"
     And I set the password with "admin123"
@@ -32,3 +32,17 @@ Feature: Login Sauce Demo
     |Finance|
     |Sales|
 
+
+  @VerifyTerminationReasonsDisplayed @NeedLogout
+  Scenario Outline: Verify termination reasons
+    Given I set the username with "Admin"
+    And I set the password with "admin123"
+    When I click the log in button
+    And I click the configuration topbar
+    And I click the termination reasons button
+    Then Termination reasons names "<termName>" will be displayed
+  Examples:
+    |termName|
+    |Deceased|
+    |Dismissed|
+    |Laid-off|

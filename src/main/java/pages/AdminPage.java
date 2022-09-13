@@ -40,4 +40,5 @@ public class AdminPage {
         addSkillBtn.click();
     }
 
+
 }
